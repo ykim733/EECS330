@@ -8,6 +8,30 @@ body {
     background-color: #f8f8f8;
 }
 
+#budgetbar{
+  height: 40px;
+  border-color: #3A8884;
+  border-style: solid;
+}
+
+#budget-food{
+  height: 36px;
+  width: 600px;
+  background-color: #3A8884;
+}
+
+#budget-utility{
+  height: 36px;
+  width: 450px;
+  background-color: #3A889A;
+}
+
+#budget-luxuries{
+  height: 36px;
+  width: 100px;
+  background-color: #3A881D;
+}
+
 #wrapper {
     width: 100%;
 }
