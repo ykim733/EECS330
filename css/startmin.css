@@ -4,26 +4,26 @@ body {
 
 #budgetbar{
   height: 40px;
-  border-color: #3A8884;
+  /*border-color: #3A8884;*/
   border-style: solid;
 }
 
 #budget-food{
-  height: 36px;
+  height: 34px;
   width: 600px;
   background-color: #3A8884;
 }
 
 #budget-utility{
-  height: 36px;
+  height: 34px;
   width: 450px;
-  background-color: #3A889A;
+  background-color: #23B28D;
 }
 
 #budget-luxuries{
-  height: 36px;
+  height: 34px;
   width: 100px;
-  background-color: #3A881D;
+  background-color: #65FFD7;
 }
 
 #wrapper {
@@ -145,4 +145,12 @@ body {
     .navbar-top-links .dropdown-alerts {
         margin-left: auto;
     }
+}
+
+.graphs{
+  padding-top: 50px;
+}
+
+.pie{
+  padding-top: 50px;
 }
