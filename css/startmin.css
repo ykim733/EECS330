@@ -1,10 +1,13 @@
 body {
     background-color: #f8f8f8;
 }
+#categories{
+  height: 200px;
+  width: 100%;
 
+}
 #budgetbar{
   height: 40px;
-  /*border-color: #3A8884;*/
   border-style: solid;
   text-align: right;
 }
@@ -161,9 +164,11 @@ body {
 }
 
 .graphs{
-  padding-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .pie{
-  padding-top: 50px;
+  padding-top: 30px;
+    padding-bottom: 10px;
 }
