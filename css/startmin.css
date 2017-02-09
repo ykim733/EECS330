@@ -6,6 +6,7 @@ body {
   height: 40px;
   /*border-color: #3A8884;*/
   border-style: solid;
+  text-align: right;
 }
 
 #budget-food{
@@ -139,8 +140,10 @@ body {
 }
 
 .user-side {
-    color: #3A8884;
+    background-color: #3A8884;
+    color: white;
 }
+
 
 @media(min-width:768px) {
     .sidebar {
