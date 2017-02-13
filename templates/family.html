@@ -33,6 +33,15 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( ".datepicker" ).datepicker();
+      } );
+    </script>
 </head>
 <body>
 
@@ -148,8 +157,42 @@
 <img class="graphs" src="../images/TotalExpenditures.png"></img>
 <!-- <img class="pie" src="../images/FamilyPie.png"></img> -->
 <div id="doughnutChart" class="chart"></div>
-<img id="categories" src="../images/categories.png"></img>
-
+<div class="container summary-view-selector" id="summary-view-selector">
+    <div class="row">
+        <div class="col-lg-4 col-sm-4">
+            <p> <b>Start Date:</b> <input type="text" class="datepicker"></p>
+            <p> <b>End Date:</b>  <input type="text" class="datepicker"></p>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+            <b>Interval</b>
+            <form>
+                <input type="radio" name="interval"> Week <br>
+                <input type="radio" name="interval"> Month <br>
+                <input type="radio" name="interval"> Year <br>
+            </form>
+        </div>
+        <div class="col-lg-5 col-sm-5">
+            <b>Categories</b>
+            <form>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="checkbox" name="categories"> Food <br>
+                            <input type="checkbox" name="categories"> Rent <br>
+                            <input type="checkbox" name="categories"> Utilities 
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="checkbox" name="categories"> Travel <br>
+                            <input type="checkbox" name="categories"> Education <br>
+                            <input type="checkbox" name="categories"> Luxury 
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
 
         </div>
     </div>
@@ -157,16 +200,16 @@
 </div>
 
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="js/metisMenu.min.js"></script>
+<script src="../js/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/startmin.js"></script>
+<script src="../js/startmin.js"></script>
 
 </body>
 </html>
