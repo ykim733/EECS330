@@ -34,6 +34,16 @@ body {
     width: 100%;
 }
 
+#datepicker {
+  float: right;
+}
+
+#summary-view-selector {
+  outline: #000000 solid thin;
+  width: 80%;
+  padding: 3em;
+}
+
 /*#page-wrapper {
     padding: 30px 15px 0 15px;
     min-height: 568px;
