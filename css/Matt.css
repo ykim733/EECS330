@@ -12,17 +12,12 @@ body {
   min-width: 30px;
   max-width: 300px;
   padding: 5px 15px;
-  /*border-radius: 1px;*/
   background: rgba(0,0,0,.8);
   color: #ddd;
   font-size: 17px;
-  /*text-shadow: 0 1px 0 #000;*/
-  /*text-transform: uppercase;*/
   text-align: center;
   line-height: 1.3;
   letter-spacing: .06em;
-  /*box-shadow: 0 1px 3px rgba(0,0,0,0.5);*/
-  /*pointer-events: none;*/
   &::after {
       position: absolute;
       left: 50%;
@@ -30,19 +25,13 @@ body {
       content: "";
       height: 0;
       margin: 0 0 0 -6px;
-      /*border-right: 5px solid transparent;*/
-      /*border-left: 5px solid transparent;*/
-      /*border-top: 6px solid rgba(0,0,0,.7);*/
-      /*line-height: 0;*/
   }
 }
 .donut_summary {
   position: absolute;
   top: 55%;
   left: 78%;
-  /*color: #0C1013;*/
   text-align: center;
-  /*text-shadow: 0 -1px 0 #111;*/
   cursor: default;
 }
 .donut_title {
@@ -52,7 +41,6 @@ body {
   right: 60%;
   margin-top: -27%;
   font-size: 22px;
-  /*letter-spacing: .06em;*/
 }
 .donut_num {
   position: absolute;
@@ -62,12 +50,10 @@ body {
   margin-top: -15%;
   font-size: 50px;
 }
-/*.chart path:hover { opacity: 0.65; }*/
 
 .stacked-bar-graph {
   width: 100%;
   height: 38px;
- /*// background: #eee;*/
   color:#414042;
 }
 
@@ -78,7 +64,6 @@ body {
   float: left;
   color: black;
   font-weight: bold;
-  /*font-family: arial, sans-serif;*/
   padding: 10px;
   border-top: solid 1px;
   border-bottom: solid 1px;

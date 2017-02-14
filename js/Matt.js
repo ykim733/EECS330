@@ -30,7 +30,6 @@ $(function(){
       PI = Math.PI,
       settings = $.extend({
         segmentShowStroke : true,
-        // segmentStrokeColor : "#0C1013",
         segmentStrokeWidth : 1,
         baseColor: "rgba(0,0,0,0.5)",
         edgeOffset : 10,//offset from edge of $this
