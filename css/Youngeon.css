@@ -9,9 +9,9 @@ body {
   position: absolute;
   width: 350px;
   height: 350px;
-  top: 60%;
+  /*top: 60%;
   left: 80%;
-  margin: -225px 0 0 -225px;
+  margin: -225px 0 0 -225px;*/
 }
 .doughnutTip {
   position: absolute;
@@ -69,3 +69,63 @@ body {
   font-size: 55px;
 }
 .chart path:hover { opacity: 0.65; }
+
+.stacked-bar-graph {
+  width: 100%;
+  height: 38px;
+ // background: #eee;
+  color:#414042;
+}
+
+.budgetbar {
+  display: inline-block;
+  height:100%;
+  box-sizing: border-box;
+  float: left;
+  color: black;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+  padding: 10px;
+  border-top: solid 2px;
+  border-bottom: solid 2px;
+  border-color: black;
+}
+  #bar-1 {
+    background: #00b386;
+    border-left: solid 2px;
+    border-color: black;
+    width: 14%;
+  }
+
+  #bar-2 {
+    background: #d2a1b8;
+    width: 27%;
+  }
+
+  #bar-3 {
+    background: #008080;
+    width: 6%;
+  }
+
+  #bar-4 {
+    background: #dbe4ee;
+    width: 8%;
+  }
+
+  #bar-5 {
+    background: #862d59;
+    width: 8%;
+  }
+
+  #bar-6 {
+    background: #81a4cd;
+    width: 21%;
+  }
+
+  #bar-7 {
+    background: #f2f2f2;
+    border-right: solid 2px;
+    border-color: black;
+    text-align: right;
+    width: 16%;
+  }
