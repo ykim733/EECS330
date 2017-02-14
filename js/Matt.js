@@ -4,7 +4,7 @@ $(function(){
     { title: "Rent",         value:  950,   color: "#d2a1b8" },
     { title: "Travel",       value:  300,   color: "#008080" },
     { title: "Utility",      value : 120,   color: "#dbe4ee" },
-    { title: "Education",    value : 0,   color: "#862d59" },
+    { title: "Education",    value : 300,   color: "#862d59" },
     { title: "Luxury",       value : 140,   color: "#81a4cd" }
   ]);
 });
