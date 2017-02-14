@@ -20,6 +20,7 @@
 
     <!-- Custom CSS -->
     <link href="../css/startmin.css" rel="stylesheet">
+    <link href="../css/family.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="../css/morris.css" rel="stylesheet">
@@ -153,10 +154,22 @@
             </div>
 
             <!-- ... Your content goes here ... -->
-<div id="budgetbar"><div id="budget-food"><div id="budget-utility"><div id="budget-luxuries"></div></div></div></div>
+<!-- <div id="budgetbar"><div id="budget-food"><div id="budget-utility"><div id="budget-luxuries"></div></div></div></div> -->
+
+<div class="stacked-bar-graph">
+  <span class="budgetbar" style="width:20%" id="bar-1">20%</span>
+  <span class="budgetbar" style="width:15%" id="bar-2">15%</span>
+  <span class="budgetbar" style="width:30%" id="bar-3">30%</span>
+  <span class="budgetbar" style="width:30%" id="bar-4">total budget: $7,000</span>
+</div>
+
 <img class="graphs" src="../images/TotalExpenditures.png"></img>
 <!-- <img class="pie" src="../images/FamilyPie.png"></img> -->
 <div id="doughnutChart" class="chart"></div>
+<br>
+<br>
+<br>
+<br>
 <div class="container summary-view-selector" id="summary-view-selector">
     <div class="row">
         <div class="col-lg-4 col-sm-4">
@@ -210,6 +223,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="../js/startmin.js"></script>
+<script src="../js/family.js"></script>
 
 </body>
 </html>

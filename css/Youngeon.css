@@ -7,8 +7,8 @@ body {
 }
 .chart {
   position: absolute;
-  width: 450px;
-  height: 450px;
+  width: 350px;
+  height: 350px;
   top: 60%;
   left: 80%;
   margin: -225px 0 0 -225px;
@@ -44,8 +44,8 @@ body {
 }
 .doughnutSummary {
   position: absolute;
-  top: 60%;
-  left: 80%;
+  top: 55%;
+  left: 78%;
   color: #0C1013;
   text-align: center;
   text-shadow: 0 -1px 0 #111;

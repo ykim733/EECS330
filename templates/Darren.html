@@ -149,8 +149,47 @@
 <img class="graphs" src="../images/DarrenExpenditures.png"></img>
 <!-- <img class="pie" src="../images/DarrenPie.png"></img> -->
 <div id="doughnutChart" class="chart"></div>
-<img id="categories" src="../images/categories.png"></img>
+<br>
+<br>
+<br>
+<br>
+<div class="container summary-view-selector" id="summary-view-selector">
+    <div class="row">
+        <div class="col-lg-4 col-sm-4">
+            <p> <b>Start Date:</b> <input type="text" class="datepicker"></p>
+            <p> <b>End Date:</b>  <input type="text" class="datepicker"></p>
         </div>
+        <div class="col-lg-3 col-sm-3">
+            <b>Interval</b>
+            <form>
+                <input type="radio" name="interval"> Week <br>
+                <input type="radio" name="interval"> Month <br>
+                <input type="radio" name="interval"> Year <br>
+            </form>
+        </div>
+        <div class="col-lg-5 col-sm-5">
+            <b>Categories</b>
+            <form>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="checkbox" name="categories"> Food <br>
+                            <input type="checkbox" name="categories"> Rent <br>
+                            <input type="checkbox" name="categories"> Utilities
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="checkbox" name="categories"> Travel <br>
+                            <input type="checkbox" name="categories"> Education <br>
+                            <input type="checkbox" name="categories"> Luxury
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+    </div>
     </div>
 
 </div>

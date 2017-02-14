@@ -40,8 +40,9 @@ body {
 
 #summary-view-selector {
   outline: #000000 solid thin;
-  width: 80%;
-  padding: 3em;
+  width: 85%;
+  height: 130px;
+  padding: 2em;
 }
 
 /*#page-wrapper {
