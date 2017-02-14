@@ -86,13 +86,13 @@ body {
   font-weight: bold;
   font-family: arial, sans-serif;
   padding: 10px;
-  border-top: solid 1px;
-  border-bottom: solid 1px;
+  border-top: solid 2px;
+  border-bottom: solid 2px;
   border-color: black;
 }
   #bar-1 {
     background: #b3ffd9;
-    border-left: solid 1px;
+    border-left: solid 2px;
     border-color: black;
   }
 
@@ -105,68 +105,7 @@ body {
   }
   #bar-4 {
     background: #f2f2f2;
-    border-right: solid 1px;
+    border-right: solid 2px;
     border-color: black;
     text-align: right;
   }
-
-  body {
-  padding: 10px 20px;
-  background: #eeeeee;
-  font-family: sans-serif;
-  text-align: center;
-  color: #777;
-}
-
-#main {
-  margin: 0 auto;
-}
-
-.note {
-  font-size: .8em;
-}
-
-button {
-  background: #f7f7f7;
-  border-radius: 4px;
-  font-size: 1.2em;
-  padding: 5px 8px 5px 8px;
-}
-
-.tool {
-  width: 200px;
-  margin: 0 auto;
-}
-
-svg {
-  .axis {
-    font-size: 8px;
-  }
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-  }
-
-  .line {
-    fill: none;
-    stroke: steelblue;
-    stroke-width: 5px;
-  }
-
-  .tick > line {
-    display: none;
-  }
-
-  rect.zoom-panel {
-    cursor: move;
-    fill: none;
-    pointer-events: all;
-  }
-
-  .dot {
-    stroke-width: 2px;
-    fill: #fff;
-  }
-}
