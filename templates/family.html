@@ -28,6 +28,8 @@
     <!-- Custom Fonts -->
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,6 +38,7 @@
     <![endif]-->
     <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -162,10 +165,21 @@
   <span class="budgetbar" style="width:30%" id="bar-3">30%</span>
   <span class="budgetbar" style="width:30%" id="bar-4">total budget: $7,000</span>
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <canvas id="myLineChart" width="200" height="100"></canvas>
+        </div>
+        <div class="col-sm-2">
+            <div id="doughnutChart" class="chart"></div>
+        </div>
+        <div class="col-sm-1">
+        </div>
+    </div>
+</div>
 
-<img class="graphs" src="../images/TotalExpenditures.png"></img>
 <!-- <img class="pie" src="../images/FamilyPie.png"></img> -->
-<div id="doughnutChart" class="chart"></div>
+
 <br>
 <br>
 <br>
@@ -211,6 +225,42 @@
     </div>
 
 </div>
+
+
+<script>
+var data = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+        {
+            label: "Monthly Expenses",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [65, 59, 80, 81, 56, 55, 65],
+            spanGaps: false,
+        }
+    ]
+};
+var ctx = document.getElementById("myLineChart");
+var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: data
+});
+</script>
 
 <!-- jQuery -->
 <script src="../js/jquery.min.js"></script>

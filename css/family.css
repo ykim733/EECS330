@@ -9,9 +9,9 @@ body {
   position: absolute;
   width: 350px;
   height: 350px;
-  top: 60%;
-  left: 80%;
-  margin: -225px 0 0 -225px;
+  /*top: 60%;
+  left: 80%;*/
+  /*margin: -225px 0 0 -225px;*/
 }
 .doughnutTip {
   position: absolute;
