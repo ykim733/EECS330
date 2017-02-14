@@ -1,11 +1,11 @@
 $(function(){
   $("#doughnutChart").drawDoughnutChart([
-    { title: "Tokyo",         value : 120,  color: "#2C3E50" },
-    { title: "San Francisco", value:  80,   color: "#FC4349" },
-    { title: "New York",      value:  70,   color: "#6DBCDB" },
-    { title: "London",        value : 50,   color: "#F7E248" },
-    { title: "Sydney",        value : 40,   color: "#D7DADB" },
-    { title: "Berlin",        value : 20,   color: "#FFF" }
+    { title: "Food",         value : 110,  color: "#00b386" },
+    { title: "Rent",         value:  800,   color: "#d2a1b8" },
+    { title: "Travel",       value:  410,   color: "#008080" },
+    { title: "Utility",      value : 70,   color: "#dbe4ee" },
+    { title: "Education",    value : 30,   color: "#862d59" },
+    { title: "Luxury",       value : 260,   color: "#81a4cd" }
   ]);
 });
 /*!
@@ -213,7 +213,7 @@ $(function(){
     function drawDoughnutText(animationDecimal, segmentTotal) {
       $summaryNumber
         .css({opacity: animationDecimal})
-        .text((segmentTotal * animationDecimal).toFixed(1));
+        .text((segmentTotal * animationDecimal).toFixed(2));
     }
     function animateFrame(cnt, drawData) {
       var easeAdjustedAnimationPercent =(settings.animation)? CapValue(easingFunction(cnt), null, 0) : 1;

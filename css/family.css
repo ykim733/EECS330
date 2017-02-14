@@ -82,7 +82,7 @@ body {
   height:100%;
   box-sizing: border-box;
   float: left;
-//  color: #fff;
+  color: black;
   font-weight: bold;
   font-family: arial, sans-serif;
   padding: 10px;
@@ -91,21 +91,41 @@ body {
   border-color: black;
 }
   #bar-1 {
-    background: #b3ffd9;
+    background: #00b386;
     border-left: solid 2px;
     border-color: black;
+    width: 8%;
   }
 
   #bar-2 {
-    background: #ff99bb;
+    background: #d2a1b8;
+    width: 29%;
   }
 
   #bar-3 {
-    background: #ffdd99;
+    background: #008080;
+    width: 7%;
   }
+
   #bar-4 {
+    background: #dbe4ee;
+    width: 7%;
+  }
+
+  #bar-5 {
+    background: #862d59;
+    width: 12%;
+  }
+
+  #bar-6 {
+    background: #81a4cd;
+    width: 20%;
+  }
+
+  #bar-7 {
     background: #f2f2f2;
     border-right: solid 2px;
     border-color: black;
     text-align: right;
+    width: 17%;
   }
