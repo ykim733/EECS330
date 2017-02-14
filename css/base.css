@@ -56,7 +56,7 @@ body {
     background-color: #0C486B;
 }
 
-.navbar-header {
+.navbar-brand {
     float: left;
 }
 
@@ -72,10 +72,6 @@ body {
 .navbar-inverse .navbar-nav>li>a {
     color: #DDDDDD;
 
-}
-
-.navbar-top-links {
-    margin: 0;
 }
 
 .navbar-top-links li {
