@@ -1,9 +1,9 @@
 @import "bourbon";
 
-@import url(//fonts.googleapis.com/css?family=Oswald:400);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 body {
   /*background: #222428;*/
-  font-family: "Oswald", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .chart {
   position: absolute;
@@ -64,9 +64,9 @@ body {
   position: absolute;
   top: 40%;
   width: 100%;
-  right: 60%;
+  right: 68%;
   margin-top: -15%;
-  font-size: 55px;
+  font-size: 50px;
 }
 .chart path:hover { opacity: 0.65; }
 
