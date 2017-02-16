@@ -246,4 +246,21 @@ $(function(){
     }
     return $this;
   };
-})(jQuery);
+})
+
+var add_new_user = document.getElementById("add-new-user");
+
+if(add_new_user != null) {
+  add_new_user.onclick = function() {
+    var name = prompt("Enter name here", "Carter Rothman");
+
+    var number = prompt("Enter bank number here", "xxxxxxx0");
+
+    if(name != null && number != null)
+    {
+      open("../templates/New_User.html");
+    }
+  }
+}
+
+(jQuery);
