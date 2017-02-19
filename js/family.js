@@ -247,21 +247,24 @@ $(function(){
     return $this;
   };
 
+var modal = document.getElementById('myModal');
+
 var add_new_user = document.getElementById("add-new-user");
 
-if(add_new_user != null) {
-  add_new_user.onclick = function() {
-    var name = prompt("Enter name here", "Carter Rothman");
+var close = document.getElementsByClassName("close")[0];
 
-    var number = prompt("Enter bank number here", "xxxxxxx0");
+add_new_user.onclick = function() {
+    modal.style.display = "block";
+}
 
-    var budget = prompt("Monthly budget", "1000");
+close.onclick = function() {
+    modal.style.display = "none";
+}
 
-    if(name != null && number != null && budget != null)
-    {
-      open("../templates/New_User.html");
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
-  }
 }
 
 })(jQuery);
