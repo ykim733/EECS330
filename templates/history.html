@@ -34,6 +34,35 @@
             }); 
         } 
         ); 
+
+        function filterFunction() {
+          // Declare variables 
+          var input, filter, table, tr, td, i;
+          input = document.getElementById("filterInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("history-table");
+          tr = table.getElementsByTagName("tr");
+
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            found = false;
+            for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                } 
+            }
+            if (found) {
+                tr[i].style.display = "";
+            } 
+            else {
+                tr[i].style.display = "none";
+            }
+          }
+        }
     </script>
 </head>
 <body>
@@ -132,6 +161,7 @@
                     <h1 class="page-header">History</h1>
                 </div>
             </div>
+            <input type="text" id="filterInput" onkeyup="filterFunction()" placeholder="Search">
             <table id="history-table" class="tablesorter table-fill">
                 <thead>
                     <tr>
@@ -145,32 +175,32 @@
                     <tr>
                         <td class="text-left">Jan 13, 2017</td>
                         <td class="text-left">Darren</td>
-                        <td class="text-left">$ 1500.00</td>
+                        <td class="text-left">$1500.00</td>
                         <td class="text-left">Travel</td>
                     </tr>
                     <tr>
                         <td class="text-left">Jan 21, 2017</td>
                         <td class="text-left">Darren</td>
-                        <td class="text-left">$ 700.00</td>
+                        <td class="text-left">$700.00</td>
                         <td class="text-left">Education</td>
                     </tr>
                     <tr>
                         <td class="text-left">Jan 22, 2017</td>
                         <td class="text-left">Mike</td>
-                        <td class="text-left">$ 950.00</td>
+                        <td class="text-left">$950.00</td>
                         <td class="text-left">Rent</td>
           
                     </tr>
                     <tr>
                         <td class="text-left">Jan 26, 2017</td>
                         <td class="text-left">Matt</td>
-                        <td class="text-left">$ 160.00</td>
+                        <td class="text-left">$160.00</td>
                         <td class="text-left">Utility</td>
                     </tr>
                     <tr>
                         <td class="text-left">Jan 28, 2017</td>
                         <td class="text-left">Youngeon</td>
-                        <td class="text-left">$ 36.00</td>
+                        <td class="text-left">$36.00</td>
                         <td class="text-left">Luxuries</td>
                     </tr>
                 </tbody>
