@@ -19,7 +19,7 @@
     <link href="../css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/record.css" rel="stylesheet">
+    <link href="../css/history.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
 
 
@@ -28,7 +28,50 @@
 
     <!-- Custom Fonts -->
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="../js/jquery.tablesorter.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $("#history-table").tablesorter( {
 
+                cancelSelection: true,
+                sortList: [0,0],
+            });
+        }
+        );
+
+        function filterFunction() {
+          // Declare variables
+          var input, filter, table, tr, td, i;
+          input = document.getElementById("filterInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("history-table");
+          tr = table.getElementsByTagName("tr");
+
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            found = false;
+            for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+            }
+            if (found) {
+                tr[i].style.display = "";
+            }
+            else {
+                tr[i].style.display = "none";
+            }
+          }
+        }
+    </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -141,76 +184,88 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Record of Total Expenditures</h1>
+                    <h1 class="page-header">New Transactions</h1>
                 </div>
             </div>
-
-            <!-- ... Your content goes here ... -->
-            <html lang="en">
-            <head>
-            	<meta charset="utf-8" />
-            	<title>Table Style</title>
-            	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
-            </head>
-
-            <body>
-            <div class="table-title">
-            <h3>Data Table</h3>
-            </div>
-            <table class="table-fill">
-            <thead>
-            <tr>
-            <th class="text-left">Date</th>
-            <th class="text-left">Name</th>
-            <th class="text-left">Money Spent</th>
-            <th class="text-left">Item Category</th>
-            <th class="text-left">Approve?</th>
-            </tr>
-            </thead>
-            <tbody class="table-hover">
-            <tr>
-            <td class="text-left">Feb 1, 2017</td>
-            <td class="text-left">Mike</td>
-            <td class="text-left">$ 500.00</td>
-            <td class="text-left">Utility</td>
-            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-            </tr>
-            <tr>
-            <td class="text-left">Feb 1, 2017</td>
-            <td class="text-left">Darren</td>
-            <td class="text-left">$ 110.00</td>
-            <td class="text-left">Food</td>
-            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-            </tr>
-            <tr>
-            <td class="text-left">Feb 4, 2017</td>
-            <td class="text-left">Youngeon</td>
-            <td class="text-left">$ 12.00</td>
-            <td class="text-left">Food</td>
-            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-            </tr>
-            <tr>
-            <td class="text-left">Feb 6, 2017</td>
-            <td class="text-left">Mike</td>
-            <td class="text-left">$ 45.00</td>
-            <td class="text-left">Food</td>
-            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-            </tr>
-            <tr>
-            <td class="text-left">Feb 10, 2017</td>
-            <td class="text-left">Matt</td>
-            <td class="text-left">$ 70.00</td>
-            <td class="text-left">Luxuries</td>
-            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-            </tr>
-            </tbody>
+            <input type="text" id="filterInput" onkeyup="filterFunction()" placeholder="Search for anything">
+            <table id="history-table" class="tablesorter table-fill">
+                <thead>
+                    <tr>
+                        <th class="text-left">Date <i class="fa fa-sort fa-fww"></i></th>
+                        <th class="text-left">Name <i class="fa fa-sort fa-fww"></i</th>
+                        <th class="text-left">Money Spent <i class="fa fa-sort fa-fww"></i</th>
+                        <th class="text-left">Item Category <i class="fa fa-sort fa-fww"></i</th>
+                        <th class="text-left">Approve? <i class="fa fa-sort fa-fww"></i</th>
+                    </tr>
+                </thead>
+                <tbody class="table-hover">
+                    <tr>
+                        <td class="text-left">Feb 25, 2017</td>
+                        <td class="text-left">Mike</td>
+                        <td class="text-left">$220.00</td>
+                        <td class="text-left">Luxury</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Feb 25, 2017</td>
+                        <td class="text-left">Mike</td>
+                        <td class="text-left">$61.00</td>
+                        <td class="text-left">Food</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Feb 26, 2017</td>
+                        <td class="text-left">Matt</td>
+                        <td class="text-left">$270.00</td>
+                        <td class="text-left">Travel</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Feb 26, 2017</td>
+                        <td class="text-left">Darren</td>
+                        <td class="text-left">$74.00</td>
+                        <td class="text-left">Utility</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Feb 26, 2017</td>
+                        <td class="text-left">Youngeon</td>
+                        <td class="text-left">$22</td>
+                        <td class="text-left">Food</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Feb 26, 2017</td>
+                        <td class="text-left">Youngeon</td>
+                        <td class="text-left">$17.00</td>
+                        <td class="text-left">Food</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                     <tr>
+                        <td class="text-left">Feb 26, 2017</td>
+                        <td class="text-left">Darren</td>
+                        <td class="text-left">$24.00</td>
+                        <td class="text-left">Utility</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                     <tr>
+                        <td class="text-left">Feb 27, 2017</td>
+                        <td class="text-left">Matt</td>
+                        <td class="text-left">$66.00</td>
+                        <td class="text-left">Luxury</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Feb 27, 2017</td>
+                        <td class="text-left">Mike</td>
+                        <td class="text-left">$3,000</td>
+                        <td class="text-left">Education</td>
+                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                    </tr>
+                </tbody>
             </table>
-
-
-              </body>
         </div>
     </div>
-
 </div>
 
 <!-- jQuery -->
