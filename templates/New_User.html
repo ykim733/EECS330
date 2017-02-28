@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Celery | Michael </title>
+
+    <title>Celery | New_User</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -11,7 +12,7 @@
 
     <!-- Custom CSS -->
     <link href="../css/base.css" rel="stylesheet">
-    <link href="../css/Mike.css" rel="stylesheet">
+    <link href="../css/Darren.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -42,7 +43,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-top-links">
-          <li><a href="record.html"><i class="fa fa-pencil-square-o fa-fw"></i> Record</a></li>
+          <li><a href=#><i class="fa fa-pencil-square-o fa-fw"></i> Record</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-top-links">
@@ -92,11 +93,11 @@
             <div class="sidebar-nav navbar-collapse">
 
                 <ul class="nav" id="side-menu">
-                  <li>
-                      <a href="family.html" class="active"><i class="fa fa-users fa-fww"></i> Family </a>
-                  </li>
                     <li>
-                      <a href="Mike.html" class="active user-side"><i class="fa fa-user fa-fww"></i> Michael Jiang </a>
+                        <a href="family.html" class="active"><i class="fa fa-users fa-fww"></i> Family </a>
+                    </li>
+                    <li>
+                      <a href="Mike.html" class="active"><i class="fa fa-user fa-fww"></i> Michael Jiang </a>
                   </li>
                   <li>
                       <a href="Darren.html" class="active"><i class="fa fa-user fa-fww"></i> Darren Liu</a>
@@ -108,8 +109,11 @@
                       <a href="Matt.html" class="active"><i class="fa fa-user fa-fww"></i> Matt Cheung</a>
                     </li>
                     <li>
-                        <a href="#" class="active" id="add-new-user" onclick="add_new_user()"><i class="fa fa-plus fa-fww"></i> Add new user</a>
+                        <a href="New_User.html" class="active user-side"><i class="fa fa-user fa-fww"></i> Sara Sood</a>
                     </li>
+                    <li>
+                        <a href="#" class="active" id="add-new-user" onclick="add_new_user()"><i class="fa fa-plus fa-fww"></i> Add new user</a>  
+                     </li>
                 </ul>
 
             </div>
@@ -119,15 +123,15 @@
 
     <div class="modal-content">
         <span class="close">&times;</span>
-        First name: <br> <input type="text" name="firstname" placeholder="Sara" id="first_name">
+        First name: <br> <input type="text" name="firstname" placeholder="Sara">
         <br><br>
-        Last name: <br> <input type="text" name="lastname" placeholder="Sood" id="last_name">
+        Last name: <br> <input type="text" name="lastname" placeholder="Sood">
         <br><br>
-        Bank Account Number: <br> <input type="text" name="BAN" placeholder="xxxxxxx0" id="Bank_account">
+        Bank Account Number: <br> <input type="text" name="BAN" placeholder="xxxxxxx0">
         <br><br>
-        Monthly Budget: <br> <input type="text" name="budget" placeholder="1000" id="Monthly Budget">
+        Monthly Budget: <br> <input type="text" name="budget" placeholder="1000">
         <br><br>
-       <input type="submit" value="Submit" id = "submit">
+       <input type="submit" value="Submit" onclick="window.location='../templates/New_User.html'">
 
     </div>
 
@@ -141,11 +145,12 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Summary of Mike's Expenditures</h1>
+                    <h1 class="page-header">Summary of Sara's Expenditures</h1>
                 </div>
             </div>
 
-<div class="stacked-bar-graph">
+            <!-- ... Your content goes here ... -->
+            <div class="stacked-bar-graph">
               <span class="budgetbar" id="bar-1">$25.00</span>
               <span class="budgetbar" id="bar-2">$210.00</span>
               <span class="budgetbar" id="bar-3">$50.00</span>
@@ -167,6 +172,8 @@
                     </div>
                 </div>
             </div>
+
+
 <br>
 <br>
 <br>
@@ -206,7 +213,7 @@
     </div>
 </div>
 <br>
-        </div>
+    </div>
     </div>
 
 </div>
@@ -234,7 +241,7 @@ var data = {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [5, 2.2, 6.1, 4.3, 4.4, 7.6, 2.2],
+            data: [0.4, 1.1, 3.1, 3.2, 4.6, 4.8, 6.2],
             spanGaps: false,
         }
     ]
@@ -245,9 +252,14 @@ var myLineChart = new Chart(ctx, {
     data: data
 });
 </script>
+
+<!-- jQuery -->
 <script src="../js/jquery.min.js"></script>
+
+
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/Mike.js"></script>
+
+<script src="../js/Darren.js"></script>
 
 </body>
 </html>

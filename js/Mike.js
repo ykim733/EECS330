@@ -246,4 +246,31 @@ $(function(){
     }
     return $this;
   };
+
+var modal = document.getElementById('myModal');
+
+var add_new_user = document.getElementById("add-new-user");
+
+var close = document.getElementsByClassName("close")[0];
+
+submit.onclick =function(){
+  var firstname=document.getElementById('first_name');
+  var lastname= document.getElementById('last_name');
+  window.location='../templates/New_User.html';
+}
+
+add_new_user.onclick = function() {
+    modal.style.display = "block";
+}
+
+close.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+  
 })(jQuery);

@@ -35,7 +35,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Celery</a>
+            <a class="navbar-brand" href="family.html">Celery</a>
         </div>
 
         <ul class="nav navbar-nav navbar-top-links">
@@ -109,12 +109,31 @@
                       <a href="Matt.html" class="active"><i class="fa fa-user fa-fww"></i> Matt Cheung</a>
                     </li>
                     <li>
-                        <a href="#" class="active"><i class="fa fa-plus fa-fww"></i> Add new user</a>
+                        <a href="#" class="active" id="add-new-user" onclick="add_new_user()"><i class="fa fa-plus fa-fww"></i> Add new user</a>
                     </li>
                 </ul>
 
             </div>
         </div>
+
+    <div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        First name: <br> <input type="text" name="firstname" placeholder="Sara">
+        <br><br>
+        Last name: <br> <input type="text" name="lastname" placeholder="Sood">
+        <br><br>
+        Bank Account Number: <br> <input type="text" name="BAN" placeholder="xxxxxxx0">
+        <br><br>
+        Monthly Budget: <br> <input type="text" name="budget" placeholder="1000">
+        <br><br>
+        <input type="submit" value="Submit" onclick="window.location='../templates/New_User.html'">
+
+    </div>
+
+    </div>
+
     </nav>
 
     <!-- Page Content -->
@@ -127,7 +146,6 @@
                 </div>
             </div>
 
-            <!-- ... Your content goes here ... -->
 
 <div class="stacked-bar-graph">
   <span class="budgetbar" id="bar-1">$565.00</span>
@@ -160,7 +178,7 @@
     <div class="row">
         <div class="col-lg-4 col-sm-4">
             <p> <b>Start Date:</b> <input type="text" class="datepicker"></p>
-            <p> <b>End Date:</b>  <input type="text" class="datepicker"></p>
+            <p> <b>End Date:</b> &nbsp; <input type="text" class="datepicker"></p>
         </div>
         <div class="col-lg-3 col-sm-3">
             <b>Interval</b>
@@ -204,7 +222,7 @@ var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
         {
-            label: "Total Monthly Expenses",
+            label: "Total Monthly Expenses ($1,000)",
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",
@@ -222,7 +240,7 @@ var data = {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 55, 65],
+            data: [6.5, 5.9, 8.0, 8.1, 5.6, 5.5, 5.9 ],
             spanGaps: false,
         }
     ]
