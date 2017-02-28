@@ -13,6 +13,14 @@ body {
    text-transform:uppercase;
 }
 
+.add_new_class {
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
 #filterInput {
   background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
@@ -21,6 +29,39 @@ body {
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
+}
+
+#approve {
+  border: none;
+  background-color: #0C486B;
+  color: white;
+  width: 120px;
+  height: 60px;
+}
+
+#approve:hover{
+  opacity: .9;
+}
+#approve-container {
+  font-size: 25px;
+  margin-left: 22%;
+}
+
+#add_new {
+  font-size: 20px;
+}
+
+#add_transaction {
+  border: none;
+  background-color: #0C486B;
+  color: white;
+  width: 160px;
+  height: 60px;
+}
+
+#add-container {
+  font-size: 18px;
+  margin-left: auto;
 }
 
 /*** Table Styles **/
@@ -39,8 +80,8 @@ body {
 }
 
 th {
-  color:#D5DDE5;;
-  background:#1b1e24;
+  color:#D5DDE5;
+  background:#0C486B;
   border-bottom:4px solid #9ea7af;
   border-right: 1px solid #343a45;
   font-size:18px;
