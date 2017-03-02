@@ -42,7 +42,7 @@ $(function(){
         tipOffsetY: -45,
         tipClass: "donut",
         summaryClass: "donut_summary",
-        summaryTitle: "TOTAL:",
+        summaryTitle: "Total Spending:",
         summaryTitleClass: "donut_title",
         summaryNumberClass: "donut_num",
         beforeDraw: function() {  },
