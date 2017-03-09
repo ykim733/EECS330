@@ -46,6 +46,9 @@ body {
   padding: 2em;
 }
 
+.selected {
+  background-color: #3A8884;
+}
 .navbar-inverse {
     background-color: #0C486B;
 }
