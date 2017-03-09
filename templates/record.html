@@ -64,6 +64,31 @@
             }
           }
         }
+ 
+        function openTransact(evt, new_action) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(new_action).style.display = "block";
+            evt.currentTarget.className += " active";
+
+            // Get the element with id="defaultOpen" and click on it
+            // document.getElementById("defaultOpen").click();
+        }
+
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -148,157 +173,126 @@
     <div id="page-wrapper">
 
         <div class="container-fluid">
-          <!-- <div class="tab">
-            <button class="tablinks" onclick="openTransact(event, 'View')" id="defaultOpen">View Recent</button>
-            <button class="tablinks" onclick="openTransact(event, 'Add')">Add New</button>
-          </div> -->
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">New Transactions</h1>
                 </div>
             </div>
-            <input type="text" id="filterInput" onkeyup="filterFunction()" placeholder="Search for anything">
+            <div class="tab">
+                <button class="tablinks" onclick="openTransact(event, 'View')" id="defaultOpen">View Recent</button>
+                <button class="tablinks" onclick="openTransact(event, 'Add')">Add New</button>
+            </div>
             <div id="View" class="tabcontent">
-            <table id="record-table" class="tablesorter table-fill">
-                <thead>
-                    <tr>
-                        <th class="text-left">Date <i class="fa fa-sort fa-fww"></i></th>
-                        <th class="text-left">Name <i class="fa fa-sort fa-fww"></i</th>
-                        <th class="text-left">Money Spent <i class="fa fa-sort fa-fww"></i</th>
-                        <th class="text-left">Item Category <i class="fa fa-sort fa-fww"></i</th>
-                        <th class="text-left">Approve? <i class="fa fa-sort fa-fww"></i</th>
-                    </tr>
-                </thead>
-                <tbody class="table-hover">
-                    <tr>
-                        <td class="text-left">Feb 25, 2017</td>
-                        <td class="text-left">Mike</td>
-                        <td class="text-left">$220.00</td>
-                        <td class="text-left">Luxury</td>
-                        <td class="text-left" ><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Feb 25, 2017</td>
-                        <td class="text-left">Mike</td>
-                        <td class="text-left">$61.00</td>
-                        <td class="text-left">Food</td>
-                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Feb 26, 2017</td>
-                        <td class="text-left">Matt</td>
-                        <td class="text-left">$270.00</td>
-                        <td class="text-left">Travel</td>
-                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Feb 26, 2017</td>
-                        <td class="text-left">Darren</td>
-                        <td class="text-left">$74.00</td>
-                        <td class="text-left">Utility</td>
-                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Feb 26, 2017</td>
-                        <td class="text-left">Youngeon</td>
-                        <td class="text-left">$22.00</td>
-                        <td class="text-left">Food</td>
-                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Feb 26, 2017</td>
-                        <td class="text-left">Youngeon</td>
-                        <td class="text-left">$17.00</td>
-                        <td class="text-left">Food</td>
-                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                     <tr>
-                        <td class="text-left">Feb 26, 2017</td>
-                        <td class="text-left">Darren</td>
-                        <td class="text-left">$24.00</td>
-                        <td class="text-left">Utility</td>
-                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                     <tr>
-                        <td class="text-left">Feb 27, 2017</td>
-                        <td class="text-left">Matt</td>
-                        <td class="text-left">$66.00</td>
-                        <td class="text-left">Luxury</td>
-                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Feb 27, 2017</td>
-                        <td class="text-left">Mike</td>
-                        <td class="text-left">$3,000</td>
-                        <td class="text-left">Education</td>
-                        <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <div id="approve-container">
-            <button id="approve" type="button">Approve</button>
-          </div>
-        </div>
-        <div id="add" class="tabcontent">
-            <form id="Add">
-              <h2>Add New Transaction</h2>
-              Date: <input class="add_new_class" type="date" name="firstname" required="required"><br>
-              Name: <input class="add_new_class" type="text" name="name" required="required"><br>
-              Money Spent: <input class="add_new_class" type="text" name="amount" required="required"><br>
-              Item Category: <input class="add_new_class" type="text" name="itemname" required="required"><br>
-              <br>
-               <div id="add-container">
-                 <button id="add_transaction" type="button">Add Transaction</button>
-               </div>
-                </form>
-              </div>
-               <br>
-               <br>
+                <input type="text" id="filterInput" onkeyup="filterFunction()" placeholder="Search for anything">
+                <table id="record-table" class="tablesorter table-fill">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Date <i class="fa fa-sort fa-fww"></i></th>
+                            <th class="text-left">Name <i class="fa fa-sort fa-fww"></i</th>
+                            <th class="text-left">Money Spent <i class="fa fa-sort fa-fww"></i</th>
+                            <th class="text-left">Item Category <i class="fa fa-sort fa-fww"></i</th>
+                            <th class="text-left">Approve? <i class="fa fa-sort fa-fww"></i</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr>
+                            <td class="text-left">Feb 25, 2017</td>
+                            <td class="text-left">Mike</td>
+                            <td class="text-left">$220.00</td>
+                            <td class="text-left">Luxury</td>
+                            <td class="text-left" ><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Feb 25, 2017</td>
+                            <td class="text-left">Mike</td>
+                            <td class="text-left">$61.00</td>
+                            <td class="text-left">Food</td>
+                            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Feb 26, 2017</td>
+                            <td class="text-left">Matt</td>
+                            <td class="text-left">$270.00</td>
+                            <td class="text-left">Travel</td>
+                            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Feb 26, 2017</td>
+                            <td class="text-left">Darren</td>
+                            <td class="text-left">$74.00</td>
+                            <td class="text-left">Utility</td>
+                            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Feb 26, 2017</td>
+                            <td class="text-left">Youngeon</td>
+                            <td class="text-left">$22.00</td>
+                            <td class="text-left">Food</td>
+                            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Feb 26, 2017</td>
+                            <td class="text-left">Youngeon</td>
+                            <td class="text-left">$17.00</td>
+                            <td class="text-left">Food</td>
+                            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                         <tr>
+                            <td class="text-left">Feb 26, 2017</td>
+                            <td class="text-left">Darren</td>
+                            <td class="text-left">$24.00</td>
+                            <td class="text-left">Utility</td>
+                            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                         <tr>
+                            <td class="text-left">Feb 27, 2017</td>
+                            <td class="text-left">Matt</td>
+                            <td class="text-left">$66.00</td>
+                            <td class="text-left">Luxury</td>
+                            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Feb 27, 2017</td>
+                            <td class="text-left">Mike</td>
+                            <td class="text-left">$3,000</td>
+                            <td class="text-left">Education</td>
+                            <td class="text-left"><form action=""><input type="checkbox" name="vehicle" value="approve"></form></td>
+                        </tr>
+                    </tbody>
+                </table>
 
+                <br>
+                <div id="approve-container">
+                    <button id="approve" type="button">Approve</button>
+                </div>
+            </div>
+            <div id="Add" class="tabcontent">
+                <form id="Add">
+                    <h2>Add New Transaction</h2>
+                      Date: <input class="add_new_class" type="date" name="firstname" required="required"><br>
+                      Name: <input class="add_new_class" type="text" name="name" required="required"><br>
+                      Money Spent: <input class="add_new_class" type="text" name="amount" required="required"><br>
+                      Item Category: <input class="add_new_class" type="text" name="itemname" required="required"><br>
+                    <br>
+                    <div id="add-container">
+                        <button id="add_transaction" type="button">Add Transaction</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <br>
 
         </div>
 
     </div>
 </div>
 
-<script>
-function openTransact(evt, new_action) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
 
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(new_action).style.display = "block";
-    evt.currentTarget.className += " active";
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-}
-
-</script>
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="js/metisMenu.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="js/startmin.js"></script>
 
 </body>
 </html>
