@@ -62,6 +62,62 @@
             }
           }
         }
+
+        function filterCat() {
+            table = document.getElementById("history-table");
+            tr = table.getElementsByTagName("tr");
+            var selectedCat = [];
+            $("input:checkbox[name=categories]:checked").each(function(){
+                selectedCat.push($(this).val());
+            });
+            console.log(selectedCat);
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                found = false;
+                for (var j=0; j<selectedCat.length; j++) {
+                    if (td[3] && td[3].innerHTML.indexOf(selectedCat[j]) > -1) {
+                        console.log("found");
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+        function filterName() {
+            table = document.getElementById("history-table");
+            tr = table.getElementsByTagName("tr");
+            var selectedName = [];
+            $("input:checkbox[name=name]:checked").each(function(){
+                selectedName.push($(this).val());
+            });
+            console.log(selectedName);
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                found = false;
+                for (var j=0; j<selectedName.length; j++) {
+                    if (td[1] && td[1].innerHTML.indexOf(selectedName[j]) > -1) {
+                        console.log("found");
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
     </script>
 </head>
 <body>
@@ -127,140 +183,159 @@
     <br>
     <div id="page-wrapper">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">History</h1>
                 </div>
             </div>
-            <input type="text" id="filterInput" onkeyup="filterFunction()" placeholder="Search for anything">
-            <table id="history-table" class="tablesorter table-fill">
-                <thead>
-                    <tr>
-                        <th class="text-left">Date <i class="fa fa-sort fa-fww"></i></th>
-                        <th class="text-left">Name <i class="fa fa-sort fa-fww"></i</th>
-                        <th class="text-left">Money Spent <i class="fa fa-sort fa-fww"></i</th>
-                        <th class="text-left">Item Category <i class="fa fa-sort fa-fww"></i</th>
-                    </tr>
-                </thead>
-                <tbody class="table-hover">
-                    <tr>
-                        <td class="text-left">Jan 7, 2017</td>
-                        <td class="text-left">Youngeon</td>
-                        <td class="text-left">$30.00</td>
-                        <td class="text-left">Food</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 9, 2017</td>
-                        <td class="text-left">Darren</td>
-                        <td class="text-left">$340.00</td>
-                        <td class="text-left">Luxury</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 13, 2017</td>
-                        <td class="text-left">Matt</td>
-                        <td class="text-left">$600.00</td>
-                        <td class="text-left">Luxury</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 13, 2017</td>
-                        <td class="text-left">Mike</td>
-                        <td class="text-left">$650.00</td>
-                        <td class="text-left">Travel</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 13, 2017</td>
-                        <td class="text-left">Youngeon</td>
-                        <td class="text-left">$50.00</td>
-                        <td class="text-left">Utility</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 13, 2017</td>
-                        <td class="text-left">Darren</td>
-                        <td class="text-left">$1500.00</td>
-                        <td class="text-left">Travel</td>
-                    </tr>
-                     <tr>
-                        <td class="text-left">Jan 14, 2017</td>
-                        <td class="text-left">Darren</td>
-                        <td class="text-left">$22.00</td>
-                        <td class="text-left">Food</td>
-                    </tr>
-                     <tr>
-                        <td class="text-left">Jan 15, 2017</td>
-                        <td class="text-left">Mike</td>
-                        <td class="text-left">$32.00</td>
-                        <td class="text-left">Luxuries</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 15, 2017</td>
-                        <td class="text-left">Youngeon</td>
-                        <td class="text-left">$20,00</td>
-                        <td class="text-left">Education</td>
-                    </tr>
-                     <tr>
-                        <td class="text-left">Jan 18, 2017</td>
-                        <td class="text-left">Mike</td>
-                        <td class="text-left">$60.00</td>
-                        <td class="text-left">Food</td>
-                    </tr>
+            <div class="col-lg-10 col-sm-10">
 
-                   <tr>
-                        <td class="text-left">Jan 20, 2017</td>
-                        <td class="text-left">Matt</td>
-                        <td class="text-left">$50.00</td>
-                        <td class="text-left">Education</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 21, 2017</td>
-                        <td class="text-left">Darren</td>
-                        <td class="text-left">$700.00</td>
-                        <td class="text-left">Education</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 22, 2017</td>
-                        <td class="text-left">Mike</td>
-                        <td class="text-left">$950.00</td>
-                        <td class="text-left">Rent</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 23, 2017</td>
-                        <td class="text-left">Mike</td>
-                        <td class="text-left">$80.00</td>
-                        <td class="text-left">Luxuries</td>
-                    </tr>
-                     <tr>
-                        <td class="text-left">Jan 25, 2017</td>
-                        <td class="text-left">Matt</td>
-                        <td class="text-left">$500.00</td>
-                        <td class="text-left">Rent</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 26, 2017</td>
-                        <td class="text-left">Matt</td>
-                        <td class="text-left">$160.00</td>
-                        <td class="text-left">Utility</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 28, 2017</td>
-                        <td class="text-left">Youngeon</td>
-                        <td class="text-left">$36.00</td>
-                        <td class="text-left">Luxuries</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 29, 2017</td>
-                        <td class="text-left">Darren</td>
-                        <td class="text-left">$30.00</td>
-                        <td class="text-left">Utility</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Jan 30, 2017</td>
-                        <td class="text-left">Youngeon</td>
-                        <td class="text-left">$200.00</td>
-                        <td class="text-left">Luxuries</td>
-                    </tr>
-                </tbody>
-            </table>
+                <input type="text" id="filterInput" onkeyup="filterFunction()" placeholder="Search for anything">
+                <table id="history-table" class="tablesorter table-fill">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Date <i class="fa fa-sort fa-fww"></i></th>
+                            <th class="text-left">Name <i class="fa fa-sort fa-fww"></i></th>
+                            <th class="text-left">Money Spent <i class="fa fa-sort fa-fww"></i></th>
+                            <th class="text-left">Item Category <i class="fa fa-sort fa-fww"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr>
+                            <td class="text-left">Jan 7, 2017</td>
+                            <td class="text-left">Youngeon</td>
+                            <td class="text-left">$30.00</td>
+                            <td class="text-left">Food</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 9, 2017</td>
+                            <td class="text-left">Darren</td>
+                            <td class="text-left">$340.00</td>
+                            <td class="text-left">Luxury</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 13, 2017</td>
+                            <td class="text-left">Matt</td>
+                            <td class="text-left">$600.00</td>
+                            <td class="text-left">Luxury</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 13, 2017</td>
+                            <td class="text-left">Mike</td>
+                            <td class="text-left">$650.00</td>
+                            <td class="text-left">Travel</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 13, 2017</td>
+                            <td class="text-left">Youngeon</td>
+                            <td class="text-left">$50.00</td>
+                            <td class="text-left">Utilities</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 13, 2017</td>
+                            <td class="text-left">Darren</td>
+                            <td class="text-left">$1500.00</td>
+                            <td class="text-left">Travel</td>
+                        </tr>
+                         <tr>
+                            <td class="text-left">Jan 14, 2017</td>
+                            <td class="text-left">Darren</td>
+                            <td class="text-left">$22.00</td>
+                            <td class="text-left">Food</td>
+                        </tr>
+                         <tr>
+                            <td class="text-left">Jan 15, 2017</td>
+                            <td class="text-left">Mike</td>
+                            <td class="text-left">$32.00</td>
+                            <td class="text-left">Luxuries</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 15, 2017</td>
+                            <td class="text-left">Youngeon</td>
+                            <td class="text-left">$20,00</td>
+                            <td class="text-left">Education</td>
+                        </tr>
+                         <tr>
+                            <td class="text-left">Jan 18, 2017</td>
+                            <td class="text-left">Mike</td>
+                            <td class="text-left">$60.00</td>
+                            <td class="text-left">Food</td>
+                        </tr>
+
+                       <tr>
+                            <td class="text-left">Jan 20, 2017</td>
+                            <td class="text-left">Matt</td>
+                            <td class="text-left">$50.00</td>
+                            <td class="text-left">Education</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 21, 2017</td>
+                            <td class="text-left">Darren</td>
+                            <td class="text-left">$700.00</td>
+                            <td class="text-left">Education</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 22, 2017</td>
+                            <td class="text-left">Mike</td>
+                            <td class="text-left">$950.00</td>
+                            <td class="text-left">Rent</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 23, 2017</td>
+                            <td class="text-left">Mike</td>
+                            <td class="text-left">$80.00</td>
+                            <td class="text-left">Luxuries</td>
+                        </tr>
+                         <tr>
+                            <td class="text-left">Jan 25, 2017</td>
+                            <td class="text-left">Matt</td>
+                            <td class="text-left">$500.00</td>
+                            <td class="text-left">Rent</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 26, 2017</td>
+                            <td class="text-left">Matt</td>
+                            <td class="text-left">$160.00</td>
+                            <td class="text-left">Utilities</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 28, 2017</td>
+                            <td class="text-left">Youngeon</td>
+                            <td class="text-left">$36.00</td>
+                            <td class="text-left">Luxuries</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 29, 2017</td>
+                            <td class="text-left">Darren</td>
+                            <td class="text-left">$30.00</td>
+                            <td class="text-left">Utilities</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Jan 30, 2017</td>
+                            <td class="text-left">Youngeon</td>
+                            <td class="text-left">$200.00</td>
+                            <td class="text-left">Luxuries</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+                <h2 class="no-margin">Filter</h2>
+                <br>
+                <h4 class="no-margin">Name</h4>
+                    <input type="checkbox" name="name" value="Mike" onclick="filterName();" checked> Michael Jiang <br>
+                    <input type="checkbox" name="name" value="Darren" onclick="filterName();" checked> Darren Liu <br>
+                    <input type="checkbox" name="name" value="Youngeon" onclick="filterName();" checked> Youngeon Kim <br>
+                    <input type="checkbox" name="name" value="Matt" onclick="filterName();" checked> Matt Cheung <br>
+                <br>
+                <h4 class="no-margin">Item Categories</h4>
+                    <input type="checkbox" name="categories" value="Food" onclick="filterCat();" checked> Food <br>
+                    <input type="checkbox" name="categories" value="Rent" onclick="filterCat();" checked> Rent <br>
+                    <input type="checkbox" name="categories" value="Utilities" onclick="filterCat();" checked> Utilities <br>
+                    <input type="checkbox" name="categories" value="Travel" onclick="filterCat();" checked> Travel <br>
+                    <input type="checkbox" name="categories" value="Education" onclick="filterCat();" checked> Education <br>
+                    <input type="checkbox" name="categories" value="Luxury" onclick="filterCat();" checked> Luxury
+            </div>
         </div>
         <br>
         <br>
