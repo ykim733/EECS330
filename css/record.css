@@ -20,7 +20,7 @@ body {
 #filterInput {
   background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 93%; /* Full-width */
+    width: 100%; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 1px solid #ddd; /* Add a grey border */
@@ -28,7 +28,7 @@ body {
 }
 #page-wrapper {
     position: inherit;
-    margin-left: 70px;
+    margin-left: 15px;
     padding: 30px 30px 0 30px;
     border-left: none;
 }
@@ -47,6 +47,7 @@ body {
   font-size: 25px;
   margin-left: 33%;
   padding-top: 5px;
+  padding-bottom: 35px;
 }
 
 #add_new {
@@ -57,15 +58,27 @@ body {
   border: none;
   background-color: #0C486B;
   color: white;
-  width: 160px;
+  width: 270px;
   height: 60px;
 }
 
 #add-container {
-  font-size: 18px;
+  font-size: 22px;
   margin-left: auto;
 }
 
+#new_submit {
+  margin: auto;
+  text-align: center;
+}
+
+/*#new_sub {
+    background-color: #0C486B;
+    border: none;
+    color: white;
+    width: 100px;
+    padding: 10px;
+}*/
 /*** Table Styles **/
 
 .table-fill {
@@ -195,8 +208,8 @@ div.tab {
     float: left;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
-    width: 30%;
-    height: 300px;
+    width: 10%;
+    height: 650px;
 }
 
 /* Style the buttons inside the tab */
@@ -211,6 +224,7 @@ div.tab button {
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 15px;
 }
 
 /* Change background color of buttons on hover */
@@ -228,7 +242,19 @@ div.tab button.active {
     float: left;
     padding: 0px 12px;
     border: 1px solid #ccc;
-    width: 70%;
+    width: 90%;
     border-left: none;
-    height: 500px;
+    height: 650px;
+}
+
+.new_tab {
+    background: #EBEBEB !important;
+    border-top: 1px solid #22262e !important;
+    border-bottom: 1px solid #22262e !important;
+    color: black !important;
+}
+
+h2 {
+  float: left;
+  padding-bottom: 10px;
 }
