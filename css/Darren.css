@@ -69,6 +69,12 @@ body {
   border-bottom: solid 1px;
   border-color: black;
 }
+#page-wrapper {
+    position: inherit;
+    margin-left: 200px;
+    padding: 30px 30px 0 30px;
+    border-left: 1px solid #e7e7e7;
+}
   #bar-1 {
     background: rgba(12, 72, 107, .9);
     border-left: solid 1px;
