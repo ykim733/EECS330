@@ -131,5 +131,6 @@ body {
 }
 
 #add-new-user{
-  
+  background-color: rgba(12, 72, 107, .85);
+  color: #f8f8f8;
 }

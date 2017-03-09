@@ -70,43 +70,19 @@ body {
   border-color: black;
 }
   #bar-1 {
-    background: #00b386;
+    background: rgba(12, 72, 107, .85);
     border-left: solid 1px;
     border-color: black;
-    width: 14%;
+    width: 79%;
+    color: #f8f8f8;
   }
 
   #bar-2 {
-    background: #d2a1b8;
-    width: 27%;
-  }
-
-  #bar-3 {
-    background: #008080;
-    width: 6%;
-  }
-
-  #bar-4 {
-    background: #dbe4ee;
-    width: 8%;
-  }
-
-  #bar-5 {
-    background: #862d59;
-    width: 8%;
-  }
-
-  #bar-6 {
-    background: #81a4cd;
-    width: 21%;
-  }
-
-  #bar-7 {
     background: #f2f2f2;
     border-right: solid 1px;
     border-color: black;
     text-align: right;
-    width: 16%;
+    width: 21%;
   }
 
   .modal {
